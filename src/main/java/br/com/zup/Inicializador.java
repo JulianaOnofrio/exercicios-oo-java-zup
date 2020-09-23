@@ -1,3 +1,5 @@
+package br.com.zup;
+
 import br.com.zup.domain.Empresa;
 import br.com.zup.domain.builder.EmpresaBuilder;
 
