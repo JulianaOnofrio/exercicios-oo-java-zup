@@ -13,11 +13,11 @@ public class Unidade {
         super();
     }
 
-    public Unidade(String nomeUnidade, Endereco endereco, List<Funcionario> funcionarios) {
+    public Unidade(String nomeUnidade, Endereco endereco) {
         super();
         this.nomeUnidade = nomeUnidade;
         this.endereco = endereco;
-        this.funcionarios = funcionarios;
+
     }
 
     @Override

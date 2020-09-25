@@ -15,7 +15,6 @@ public class Inicializador {
         System.out.println(EmpresaBuilder.getInstance());
 
     }
-
 }
 
 
