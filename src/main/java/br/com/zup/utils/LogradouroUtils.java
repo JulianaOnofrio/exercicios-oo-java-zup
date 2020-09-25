@@ -8,14 +8,7 @@ public class LogradouroUtils {
 
     private List<String> logradouro = Arrays.asList("Rua Doutor João Batista de Lacerda,Numero 402,Bairro Mooca, Complemento Casa","Rua Ouro Preto,Numero 1112,Bairro Santo Agostinho, Complemento 2° Andar", "Avenida Bélgica,Numero 1220,Bairro Sabiá, Complemento Casa", "Rua Francisco Teodoro,Numero 72,Bairro Barão Geraldo, Complemento Casa", "Rua Pascua Vale,Numero 266,Bairro Vila Nova, Complemento Casa", "Rua América,Numero 52,Bairro Blumenau, Complemento Casa");
 
-
-    public static void main(String[] args) {
-        System.out.println(br.com.zup.utils.LogradouroUtils.geraLogradouro());
-        System.out.println(br.com.zup.utils.LogradouroUtils.geraLogradouro());
-        System.out.println(br.com.zup.utils.LogradouroUtils.geraLogradouro());
-        System.out.println(br.com.zup.utils.LogradouroUtils.geraLogradouro());
-        System.out.println(br.com.zup.utils.LogradouroUtils.geraLogradouro());
-        System.out.println(br.com.zup.utils.LogradouroUtils.geraLogradouro());
+    public LogradouroUtils() {
     }
 
     public static String geraLogradouro() {

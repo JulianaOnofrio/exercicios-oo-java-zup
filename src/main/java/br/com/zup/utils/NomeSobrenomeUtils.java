@@ -9,20 +9,9 @@ public class NomeSobrenomeUtils {
     private List<String> nomes = Arrays.asList("João","Maurício", "Francisco", "Caio", "Roberto", "Vitor");
     private List<String> sobrenomes = Arrays.asList("Alves", "Oliveira", "Guedes", "Marcos", "Onofrio","Salles");
 
-    public static void main(String[] args) {
-        System.out.println(NomeSobrenomeUtils.geraNome());
-        System.out.println(NomeSobrenomeUtils.geraNome());
-        System.out.println(NomeSobrenomeUtils.geraNome());
-        System.out.println(NomeSobrenomeUtils.geraNome());
-        System.out.println(NomeSobrenomeUtils.geraNome());
-        System.out.println(NomeSobrenomeUtils.geraNome());
-        System.out.println(NomeSobrenomeUtils.geraSobrenome());
-        System.out.println(NomeSobrenomeUtils.geraSobrenome());
-        System.out.println(NomeSobrenomeUtils.geraSobrenome());
-        System.out.println(NomeSobrenomeUtils.geraSobrenome());
-        System.out.println(NomeSobrenomeUtils.geraSobrenome());
-        System.out.println(NomeSobrenomeUtils.geraSobrenome());
+    public NomeSobrenomeUtils() {
     }
+
 
     public static String geraNome() {
             List<String> nomes = new NomeSobrenomeUtils().getNomes();
