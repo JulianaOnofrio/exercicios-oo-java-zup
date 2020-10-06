@@ -59,11 +59,11 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereco{" +
-                "logradouro='" + logradouro + '\'' +
-                ", cidade=" + cidade +
-                ", estado=" + estado +
-                ", cep='" + cep + '\'' +
-                '}';
+                "logradouro=" + logradouro + ",\n" +
+                "cidade=" + cidade + ",\n" +
+                "estado=" + estado + ",\n" +
+                "cep=" + cep +
+                "}\n";
     }
 
     @Override

@@ -23,10 +23,10 @@ public class Unidade {
     @Override
     public String toString() {
         return "Unidade{" +
-                "nomeUnidade='" + nomeUnidade + '\'' +
-                ", endereco=" + endereco +
-                ", funcionarios=" + funcionarios +
-                '}';
+                "nomeUnidade=" + nomeUnidade + ",\n" +
+                "endereco=" + endereco + ",\n" +
+                "funcionarios=" + funcionarios +
+                "}\n";
     }
 
     @Override

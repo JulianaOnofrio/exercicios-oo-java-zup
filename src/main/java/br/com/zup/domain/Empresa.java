@@ -59,10 +59,10 @@ public Empresa() {
     @Override
     public String toString() {
         return "Empresa{" +
-                "nomeFantasia='" + nomeFantasia + '\'' +
-                ", dataAbertura=" + dataAbertura +
-                ", funcionarios=" + funcionarios +
-                ", unidades=" + unidades +
-                '}';
+                "nomeFantasia=" + nomeFantasia + ",\n"  +
+                "dataAbertura=" + dataAbertura +",\n" +
+                "funcionarios=" + funcionarios + ",\n" +
+                "unidades=" + unidades +
+                "}\n";
     }
 }

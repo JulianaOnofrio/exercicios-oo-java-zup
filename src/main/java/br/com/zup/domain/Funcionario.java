@@ -80,12 +80,12 @@ public class Funcionario {
     @Override
     public String toString() {
         return "Funcionario{" +
-                "nome='" + nome + '\'' +
-                ", sobrenome='" + sobrenome + '\'' +
-                ", dataNascimento=" + dataNascimento +
-                ", dataAdmissao=" + dataAdmissao +
-                ", endereco=" + endereco +
-                '}';
+                "nome=" + nome + "\n" +
+                "sobrenome=" + sobrenome + ",\n" +
+                "dataNascimento=" + dataNascimento + ",\n" +
+                "dataAdmissao=" + dataAdmissao + ",\n" +
+                "endereco=" + endereco +
+                "}\n";
     }
 
     @Override
