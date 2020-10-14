@@ -1,6 +1,7 @@
 package br.com.zup.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -11,12 +12,13 @@ public class Funcionario {
     private LocalDate dataAdmissao;
     private Endereco endereco;
     private Unidade unidade;
+    private List<Beneficio> beneficios;
 
     public Funcionario() {
         super();
     }
 
-    public Funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade) {
+    public Funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade, List<Beneficio> beneficios) {
         super();
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -24,6 +26,7 @@ public class Funcionario {
         this.dataAdmissao = dataAdmissao;
         this.endereco = endereco;
         this.unidade = unidade;
+        this.beneficios = beneficios;
 
 
     }
@@ -77,17 +80,26 @@ public class Funcionario {
         this.unidade = unidade;
     }
 
-    @Override
-    public String toString() {
-        return "Funcionario{" +
-                "nome=" + nome + "\n" +
-                "sobrenome=" + sobrenome + ",\n" +
-                "dataNascimento=" + dataNascimento + ",\n" +
-                "dataAdmissao=" + dataAdmissao + ",\n" +
-                "endereco=" + endereco +
-                "}\n";
+    public List<Beneficio> getBeneficios() {
+        return beneficios;
     }
 
+    public void setBeneficios(List<Beneficio> beneficios) {
+        this.beneficios = beneficios;
+    }
+
+    @Override
+    public String toString() {
+        return "\nFuncionario{" + "\n" +
+                "\tnome=" + nome + "\n" +
+                "\tsobrenome=" + sobrenome + ",\n" +
+                "\tdataNascimento=" + dataNascimento + ",\n" +
+                "\tdataAdmissao=" + dataAdmissao + ",\n" +
+                "\tendereco=" + endereco + ",\n" +
+                "\tbeneficios=" + beneficios + ",\n" +
+                "}\n"+
+                "---------------------------------------------------------\n";
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -14,10 +14,12 @@ public class CepUtils {
 
     public static String geraCep() {
 
-        int indice =  new Random().nextInt(ceps.size());
+        int indice = new Random().nextInt(ceps.size());
         String cep = ceps.get(indice);
         ceps.remove(indice);
         return cep;
     }
 }
 
+
+//tem uma função, que recebe uma lista

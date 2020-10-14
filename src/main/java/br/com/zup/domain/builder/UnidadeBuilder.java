@@ -22,7 +22,8 @@ public class UnidadeBuilder {
         return this;
     }
 
-    public Unidade build() { return this.unidade;
+    public Unidade build() {
+        return this.unidade;
     }
 
     public List<Unidade> buildUnidades() {
@@ -67,7 +68,7 @@ public class UnidadeBuilder {
                 .endereco("Rua Doutor João Colin,Numero 1285,Bairro América, Complemento Salas 19 e 21",
                         Cidade.JOINVILLE, Estado.SANTA_CATARINA, "89201010")
                 .build();
-                Unidade unidade6 = UnidadeBuilder.getInstance().unidade("Santa Cataria", enderecoUnidade6).build();
+        Unidade unidade6 = UnidadeBuilder.getInstance().unidade("Santa Cataria", enderecoUnidade6).build();
         unidades.add(unidade6);
 
         return unidades;
