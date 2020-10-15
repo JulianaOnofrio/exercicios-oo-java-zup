@@ -6,6 +6,7 @@ import br.com.zup.domain.Funcionario;
 import br.com.zup.domain.Unidade;
 import br.com.zup.domain.enums.Cidade;
 import br.com.zup.domain.enums.Estado;
+import br.com.zup.domain.enums.LinguagemDeProgramacao;
 import br.com.zup.utils.DataUtils;
 import br.com.zup.utils.NomeSobrenomeUtils;
 import org.junit.jupiter.api.Assertions;
@@ -31,8 +32,8 @@ public class FuncionarioBuilderTest {
                 .endereco("Rua amor, número 2200, Bairro Felicidade, Complemento Sucesso", Cidade.UBERLANDIA, Estado.MINAS_GERAIS, "38405983").build();
         unidade = UnidadeBuilder.getInstance().unidade("Uberlândia", enderecoUnidade).build();
         List<Beneficio> beneficios = BeneficioBuilder.getInstance().buildBeneficios(unidade.getEndereco().getEstado());
-        funcionario = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario, unidade, beneficios).build();
+        funcionario = FuncionarioBuilder.getInstance().developer(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario, unidade, beneficios, LinguagemDeProgramacao.JAVA).build();
     }
 
     @Test

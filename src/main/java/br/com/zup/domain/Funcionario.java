@@ -14,23 +14,6 @@ public class Funcionario {
     private Unidade unidade;
     private List<Beneficio> beneficios;
 
-    public Funcionario() {
-        super();
-    }
-
-    public Funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade, List<Beneficio> beneficios) {
-        super();
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.dataNascimento = dataNascimento;
-        this.dataAdmissao = dataAdmissao;
-        this.endereco = endereco;
-        this.unidade = unidade;
-        this.beneficios = beneficios;
-
-
-    }
-
 
     public String getNome() {
         return nome;
@@ -96,10 +79,11 @@ public class Funcionario {
                 "\tdataNascimento=" + dataNascimento + ",\n" +
                 "\tdataAdmissao=" + dataAdmissao + ",\n" +
                 "\tendereco=" + endereco + ",\n" +
-                "\tbeneficios=" + beneficios + ",\n" +
-                "}\n"+
-                "---------------------------------------------------------\n";
+                "\tbeneficios=" + beneficios + ",\n" ;
+        //"}\n"+
+        //"---------------------------------------------------------\n";
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -110,14 +94,13 @@ public class Funcionario {
                 Objects.equals(dataNascimento, that.dataNascimento) &&
                 Objects.equals(dataAdmissao, that.dataAdmissao) &&
                 Objects.equals(endereco, that.endereco) &&
-                Objects.equals(unidade, that.unidade);
+                Objects.equals(unidade, that.unidade) &&
+                Objects.equals(beneficios, that.beneficios);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade);
+        return Objects.hash(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade, beneficios);
     }
-
-
 }
 

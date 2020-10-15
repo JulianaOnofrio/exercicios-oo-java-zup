@@ -3,6 +3,7 @@ package br.com.zup.domain.builder;
 import br.com.zup.domain.*;
 import br.com.zup.domain.enums.Cidade;
 import br.com.zup.domain.enums.Estado;
+import br.com.zup.domain.enums.LinguagemDeProgramacao;
 import br.com.zup.utils.CepUtils;
 import br.com.zup.utils.DataUtils;
 import br.com.zup.utils.LogradouroUtils;
@@ -21,8 +22,14 @@ public class FuncionarioBuilder {
 
     }
 
-    public FuncionarioBuilder funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade, List<Beneficio> beneficios) {
-        this.funcionario = new Funcionario(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade, beneficios);
+    public FuncionarioBuilder developer(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade, List<Beneficio> beneficios,LinguagemDeProgramacao linguagemDeProgramacao) {
+        this.funcionario = new Developer(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade,beneficios,linguagemDeProgramacao);
+        unidade.getFuncionarios().add(this.funcionario);
+        return this;
+    }
+
+    public FuncionarioBuilder QA(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade, List<Beneficio> beneficios) {
+        this.funcionario = new QA(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade,beneficios);
         unidade.getFuncionarios().add(this.funcionario);
 
         return this;
@@ -45,9 +52,8 @@ public class FuncionarioBuilder {
                 .build();
         Unidade unidade1 = unidades.get(0);
         List<Beneficio> beneficios1 = BeneficioBuilder.getInstance().buildBeneficios(enderecoFuncionario1.getEstado());
-
-        Funcionario funcionario1 = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario1, unidade1, beneficios1).build();
+        Funcionario funcionario1 = FuncionarioBuilder.getInstance().developer(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario1, unidade1, beneficios1,LinguagemDeProgramacao.JAVA).build();
         funcionarios.add(funcionario1);
 
         Endereco enderecoFuncionario2 = EnderecoBuilder.getInstance()
@@ -56,8 +62,8 @@ public class FuncionarioBuilder {
                 .build();
         Unidade unidade2 = unidades.get(1);
         List<Beneficio> beneficios2 = BeneficioBuilder.getInstance().buildBeneficios(enderecoFuncionario2.getEstado());
-        Funcionario funcionario2 = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario2, unidade2, beneficios2).build();
+        Funcionario funcionario2 = FuncionarioBuilder.getInstance().developer(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario2, unidade2,beneficios2,LinguagemDeProgramacao.PHP).build();
         funcionarios.add(funcionario2);
 
         Endereco enderecoFuncionario3 = EnderecoBuilder.getInstance()
@@ -66,8 +72,8 @@ public class FuncionarioBuilder {
                 .build();
         Unidade unidade3 = unidades.get(2);
         List<Beneficio> beneficios3 = BeneficioBuilder.getInstance().buildBeneficios(enderecoFuncionario3.getEstado());
-        Funcionario funcionario3 = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario3, unidade3, beneficios3).build();
+        Funcionario funcionario3 = FuncionarioBuilder.getInstance().developer(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario3, unidade3,beneficios3,LinguagemDeProgramacao.RUBY).build();
         funcionarios.add(funcionario3);
 
         Endereco enderecoFuncionario4 = EnderecoBuilder.getInstance()
@@ -76,8 +82,8 @@ public class FuncionarioBuilder {
                 .build();
         Unidade unidade4 = unidades.get(3);
         List<Beneficio> beneficios4 = BeneficioBuilder.getInstance().buildBeneficios(enderecoFuncionario4.getEstado());
-        Funcionario funcionario4 = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario4, unidade4, beneficios4).build();
+Funcionario funcionario4 = FuncionarioBuilder.getInstance().QA(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario4,unidade4,beneficios4).build();
         funcionarios.add(funcionario4);
 
         Endereco enderecoFuncionario5 = EnderecoBuilder.getInstance()
@@ -86,8 +92,8 @@ public class FuncionarioBuilder {
                 .build();
         Unidade unidade5 = unidades.get(4);
         List<Beneficio> beneficios5 = BeneficioBuilder.getInstance().buildBeneficios(enderecoFuncionario5.getEstado());
-        Funcionario funcionario5 = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario5, unidade5, beneficios5).build();
+Funcionario funcionario5 = FuncionarioBuilder.getInstance().QA(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario5, unidade5,beneficios5).build();
         funcionarios.add(funcionario5);
 
         Endereco enderecoFuncionario6 = EnderecoBuilder.getInstance()
@@ -96,8 +102,8 @@ public class FuncionarioBuilder {
                 .build();
         Unidade unidade6 = unidades.get(5);
         List<Beneficio> beneficios6 = BeneficioBuilder.getInstance().buildBeneficios(enderecoFuncionario6.getEstado());
-        Funcionario funcionario6 = FuncionarioBuilder.getInstance().funcionario(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario6, unidade6, beneficios6).build();
+        Funcionario funcionario6 = FuncionarioBuilder.getInstance().QA(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario6, unidade6,beneficios6).build();
         funcionarios.add(funcionario6);
 
         return funcionarios;
