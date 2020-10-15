@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 
-public class Funcionario {
+public abstract class Funcionario {
     private String nome;
     private String sobrenome;
     private LocalDate dataNascimento;
@@ -12,11 +12,11 @@ public class Funcionario {
     private Endereco endereco;
     private Unidade unidade;
 
-    public Funcionario() {
-        super();
-    }
+    //public Funcionario() {
+      //  super();
+    //}
 
-    public Funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade) {
+    /*public Funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade) {
         super();
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -26,7 +26,7 @@ public class Funcionario {
         this.unidade = unidade;
 
 
-    }
+   } */
 
 
     public String getNome() {
