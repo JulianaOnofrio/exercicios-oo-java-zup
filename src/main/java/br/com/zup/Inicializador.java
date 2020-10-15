@@ -1,4 +1,5 @@
 package br.com.zup;
+
 import br.com.zup.domain.Empresa;
 import br.com.zup.domain.builder.EmpresaBuilder;
 
@@ -10,6 +11,7 @@ public class Inicializador {
         System.out.println(EmpresaBuilder.getInstance());
         System.out.println(EmpresaBuilder.getInstance());
         System.out.println(EmpresaBuilder.getInstance());
+
 
     }
 }

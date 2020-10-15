@@ -10,11 +10,12 @@ public class Empresa {
     private List<Unidade> unidades;
 
 
-public Empresa() {
-    super();
+    public Empresa() {
+        super();
 
-}
-    public Empresa(String nomeFantasia, LocalDate dataAbertura, List<Funcionario> funcionarios,List<Unidade> unidades) {
+    }
+
+    public Empresa(String nomeFantasia, LocalDate dataAbertura, List<Funcionario> funcionarios, List<Unidade> unidades) {
         super();
         this.nomeFantasia = nomeFantasia;
         this.dataAbertura = dataAbertura;
@@ -58,11 +59,12 @@ public Empresa() {
 
     @Override
     public String toString() {
-        return "Empresa{" +
-                "nomeFantasia=" + nomeFantasia + ",\n"  +
-                "dataAbertura=" + dataAbertura +",\n" +
-                "funcionarios=" + funcionarios + ",\n" +
-                "unidades=" + unidades +
+        return "\nEmpresa{" + "\n" +
+                "\tnomeFantasia=" + nomeFantasia + ",\n" +
+                "\tdataAbertura=" + dataAbertura + ",\n" +
+                "\tfuncionarios=" + funcionarios + ",\n" +
+                "\tunidades=" + unidades +
                 "}\n";
     }
 }
+

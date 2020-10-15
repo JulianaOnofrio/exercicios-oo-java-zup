@@ -1,4 +1,5 @@
 package br.com.zup.domain;
+
 import br.com.zup.domain.enums.Cidade;
 import br.com.zup.domain.enums.Estado;
 
@@ -16,13 +17,13 @@ public class Endereco {
     }
 
 
- public Endereco(String logradouro, Cidade cidade, Estado estado, String cep) {
-     super();
-     this.logradouro = logradouro;
-     this.cidade = cidade;
-     this.estado = estado;
-     this.cep = cep;
- }
+    public Endereco(String logradouro, Cidade cidade, Estado estado, String cep) {
+        super();
+        this.logradouro = logradouro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
 
     public String getLogradouro() {
         return logradouro;
@@ -58,12 +59,12 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" +
-                "logradouro=" + logradouro + ",\n" +
-                "cidade=" + cidade + ",\n" +
-                "estado=" + estado + ",\n" +
-                "cep=" + cep +
-                "}\n";
+        return "\nEndereco{\n" +
+                "\tlogradouro=" + logradouro + ",\n" +
+                "\tcidade=" + cidade + ",\n" +
+                "\testado=" + estado + ",\n" +
+                "\tcep=" + cep +
+                "}";
     }
 
     @Override

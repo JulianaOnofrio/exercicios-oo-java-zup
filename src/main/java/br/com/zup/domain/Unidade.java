@@ -9,7 +9,7 @@ public class Unidade {
     private Endereco endereco;
     private List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-    public Unidade(){
+    public Unidade() {
         super();
     }
 

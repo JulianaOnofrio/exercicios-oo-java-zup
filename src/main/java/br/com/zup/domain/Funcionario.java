@@ -1,6 +1,7 @@
 package br.com.zup.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -11,22 +12,7 @@ public class Funcionario {
     private LocalDate dataAdmissao;
     private Endereco endereco;
     private Unidade unidade;
-
-    public Funcionario() {
-        super();
-    }
-
-    public Funcionario(String nome, String sobrenome, LocalDate dataNascimento, LocalDate dataAdmissao, Endereco endereco, Unidade unidade) {
-        super();
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.dataNascimento = dataNascimento;
-        this.dataAdmissao = dataAdmissao;
-        this.endereco = endereco;
-        this.unidade = unidade;
-
-
-    }
+    private List<Beneficio> beneficios;
 
 
     public String getNome() {
@@ -77,15 +63,25 @@ public class Funcionario {
         this.unidade = unidade;
     }
 
+    public List<Beneficio> getBeneficios() {
+        return beneficios;
+    }
+
+    public void setBeneficios(List<Beneficio> beneficios) {
+        this.beneficios = beneficios;
+    }
+
     @Override
     public String toString() {
-        return "Funcionario{" +
-                "nome=" + nome + "\n" +
-                "sobrenome=" + sobrenome + ",\n" +
-                "dataNascimento=" + dataNascimento + ",\n" +
-                "dataAdmissao=" + dataAdmissao + ",\n" +
-                "endereco=" + endereco +
-                "}\n";
+        return "\nFuncionario{" + "\n" +
+                "\tnome=" + nome + "\n" +
+                "\tsobrenome=" + sobrenome + ",\n" +
+                "\tdataNascimento=" + dataNascimento + ",\n" +
+                "\tdataAdmissao=" + dataAdmissao + ",\n" +
+                "\tendereco=" + endereco + ",\n" +
+                "\tbeneficios=" + beneficios + ",\n" ;
+        //"}\n"+
+        //"---------------------------------------------------------\n";
     }
 
     @Override
@@ -98,14 +94,13 @@ public class Funcionario {
                 Objects.equals(dataNascimento, that.dataNascimento) &&
                 Objects.equals(dataAdmissao, that.dataAdmissao) &&
                 Objects.equals(endereco, that.endereco) &&
-                Objects.equals(unidade, that.unidade);
+                Objects.equals(unidade, that.unidade) &&
+                Objects.equals(beneficios, that.beneficios);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade);
+        return Objects.hash(nome, sobrenome, dataNascimento, dataAdmissao, endereco, unidade, beneficios);
     }
-
-
 }
 

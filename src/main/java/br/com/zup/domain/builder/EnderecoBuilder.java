@@ -1,4 +1,5 @@
 package br.com.zup.domain.builder;
+
 import br.com.zup.domain.Endereco;
 import br.com.zup.domain.enums.Cidade;
 import br.com.zup.domain.enums.Estado;
