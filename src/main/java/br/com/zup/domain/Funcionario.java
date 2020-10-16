@@ -1,11 +1,14 @@
 package br.com.zup.domain;
+import br.com.zup.domain.service.Habilidade;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
 
-public class Funcionario {
+public abstract class Funcionario implements Habilidade {
+
+
     private String nome;
     private String sobrenome;
     private LocalDate dataNascimento;
@@ -73,16 +76,17 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return "\nFuncionario{" + "\n" +
-                "\tnome=" + nome + "\n" +
-                "\tsobrenome=" + sobrenome + ",\n" +
-                "\tdataNascimento=" + dataNascimento + ",\n" +
-                "\tdataAdmissao=" + dataAdmissao + ",\n" +
-                "\tendereco=" + endereco + ",\n" +
-                "\tbeneficios=" + beneficios + ",\n" ;
-        //"}\n"+
-        //"---------------------------------------------------------\n";
+        return "Funcionario{" +
+                "nome=" + nome + "\n" +
+                "sobrenome=" + sobrenome + ",\n" +
+                "dataNascimento=" + dataNascimento + ",\n" +
+                "dataAdmissao=" + dataAdmissao + ",\n" +
+                "endereco=" + endereco  + ",\n" +
+                "habilidade=" + demonstrarHabilidade() +
+                "}\n";
+
     }
+
 
     @Override
     public boolean equals(Object o) {

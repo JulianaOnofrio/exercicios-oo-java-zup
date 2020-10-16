@@ -1,9 +1,6 @@
 package br.com.zup.domain.builder;
 
-import br.com.zup.domain.Beneficio;
-import br.com.zup.domain.Endereco;
-import br.com.zup.domain.Funcionario;
-import br.com.zup.domain.Unidade;
+import br.com.zup.domain.*;
 import br.com.zup.domain.enums.Cidade;
 import br.com.zup.domain.enums.Estado;
 import br.com.zup.domain.enums.LinguagemDeProgramacao;
@@ -24,22 +21,23 @@ public class FuncionarioBuilderTest {
 
     @BeforeEach
     public void init() {
-        Endereco enderecoUnidade = EnderecoBuilder.getInstance()
+        Endereco enderecoUnidade = new EnderecoBuilder()
                 .endereco("Avenida Rondon Pacheco,Numero 4600,Bairro Tibery, Complemento 7° e 8° andar",
                         Cidade.UBERLANDIA, Estado.MINAS_GERAIS, "38405142")
                 .build();
-        Endereco enderecoFuncionario = EnderecoBuilder.getInstance()
+        Endereco enderecoFuncionario = new EnderecoBuilder()
                 .endereco("Rua amor, número 2200, Bairro Felicidade, Complemento Sucesso", Cidade.UBERLANDIA, Estado.MINAS_GERAIS, "38405983").build();
-        unidade = UnidadeBuilder.getInstance().unidade("Uberlândia", enderecoUnidade).build();
-        List<Beneficio> beneficios = BeneficioBuilder.getInstance().buildBeneficios(unidade.getEndereco().getEstado());
-        funcionario = FuncionarioBuilder.getInstance().developer(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario, unidade, beneficios, LinguagemDeProgramacao.JAVA).build();
+        unidade = new UnidadeBuilder().unidade("Uberlândia", enderecoUnidade).build();
+        List<Beneficio> beneficios = new BeneficioBuilder().buildBeneficios(unidade.getEndereco().getEstado());
+        System.out.println(beneficios);
+        funcionario = new Developer(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario, unidade, beneficios, LinguagemDeProgramacao.JAVA);
+
     }
 
     @Test
-    @DisplayName("Teste de funcionarios")
+    @DisplayName("Teste de Garantia dos 3 Beneficios para Funcionarios")
     public void testeDeFuncionarios() {
-        Funcionario funcionario = FuncionarioBuilder.getInstance().getFuncionario();
         assertEquals(3, funcionario.getBeneficios().size());
     }
 
@@ -47,7 +45,6 @@ public class FuncionarioBuilderTest {
     @Test
     @DisplayName("Teste do Cadastro Completo de Funcionario")
     public void testeFuncionariosCompleto() {
-        Funcionario funcionario = FuncionarioBuilder.getInstance().getFuncionario();
         Assertions.assertNotNull(funcionario.getNome());
         Assertions.assertNotNull(funcionario.getSobrenome());
         Assertions.assertNotNull(funcionario.getEndereco());
@@ -57,16 +54,5 @@ public class FuncionarioBuilderTest {
         Assertions.assertNotNull(funcionario.getUnidade());
 
     }
-
 }
-
-
-//pesquisar onde roda no junit no intellij
-//asserção- resultado esperado
-//funcionario tem que ter 3 beneficios
-//nunca seja negativo - criar um teste negativo ao inves de adicionar eu substraio
-//eu já uso o método que eu fiz com a aquela lógica
-//assert notnull eu levo ele direto e não
-//penso antes qual é o resultado esperado e ai eu penso na variação
-//implementa o tratamento e ai eu faço um maior que zero.
 

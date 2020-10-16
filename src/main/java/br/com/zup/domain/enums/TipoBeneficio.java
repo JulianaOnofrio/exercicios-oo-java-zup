@@ -24,6 +24,3 @@ public enum TipoBeneficio {
 }
 
 
-//o minimo de responsabilidade e você vai testar tudo
-//ver qual é a função você tem uma função
-

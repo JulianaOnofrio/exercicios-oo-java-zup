@@ -11,18 +11,15 @@ import java.util.List;
 public class BeneficioBuilder {
 
     private Beneficio beneficio;
-    private static BeneficioBuilder uniqueInstance = new BeneficioBuilder();
+
 
     public BeneficioBuilder() {
         super();
     }
 
-    public static BeneficioBuilder getInstance() {
-        return uniqueInstance;
-    }
 
     public BeneficioBuilder beneficio(TipoBeneficio tipoBeneficio) {
-        if(tipoBeneficio.getValor().compareTo(BigDecimal.ZERO) < 0)  {
+        if (tipoBeneficio.getValor().compareTo(BigDecimal.ZERO) < 0) {
             this.beneficio.setValorBeneficio(BigDecimal.ZERO);
         }
 
@@ -45,13 +42,13 @@ public class BeneficioBuilder {
     public List<Beneficio> buildBeneficios(Estado estado) {
 
         List<Beneficio> beneficios = new ArrayList<Beneficio>();
-        Beneficio beneficioValeTransporte = BeneficioBuilder.getInstance()
+        Beneficio beneficioValeTransporte = new BeneficioBuilder()
                 .beneficio(TipoBeneficio.VALE_TRANSPORTE).aplicarBonus(estado.getBonus()).build();
 
-        Beneficio beneficioValeRefeicao = BeneficioBuilder.getInstance()
+        Beneficio beneficioValeRefeicao = new BeneficioBuilder()
                 .beneficio(TipoBeneficio.VALE_REFEICAO).aplicarBonus(estado.getBonus()).build();
 
-        Beneficio beneficioAuxilioHomeOffice = BeneficioBuilder.getInstance()
+        Beneficio beneficioAuxilioHomeOffice = new BeneficioBuilder()
                 .beneficio(TipoBeneficio.AUXILIO_HOME_OFFICE).aplicarBonus(estado.getBonus()).build();
 
         beneficios.add(beneficioValeTransporte);

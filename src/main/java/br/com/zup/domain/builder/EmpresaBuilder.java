@@ -20,8 +20,8 @@ public class EmpresaBuilder {
         Empresa empresa = new Empresa();
         empresa.setNomeFantasia("ZUP INNOVATION");
         empresa.setDataAbertura(LocalDate.of(2000, 10, 10));
-        empresa.setUnidades(UnidadeBuilder.getInstance().buildUnidades());
-        empresa.setFuncionarios(FuncionarioBuilder.getInstance().buildFuncionarios(empresa));
+        empresa.setUnidades(new UnidadeBuilder().buildUnidades());
+        empresa.setFuncionarios(new FuncionarioBuilder().buildFuncionarios(empresa));
         return empresa;
     }
 }

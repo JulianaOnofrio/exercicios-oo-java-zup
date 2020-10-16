@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BeneficioBuilderTest {
     @Test
-    @DisplayName("Teste beneficio nunca negativa")
+    @DisplayName("Teste Beneficio Nunca Negativo")
     public void testeBeneficio() {
-        Beneficio beneficio = BeneficioBuilder.getInstance().beneficio(TipoBeneficio.VALE_REFEICAO).build();
+        Beneficio beneficio = new BeneficioBuilder().beneficio(TipoBeneficio.VALE_REFEICAO).build();
         assertTrue(beneficio.getValorBeneficio().compareTo(BigDecimal.ZERO) > 0);
 
     }

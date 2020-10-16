@@ -39,4 +39,9 @@ public class Developer extends Funcionario {
                         "}\n"+
                         "---------------------------------------------------------\n";
     }
+
+    @Override
+    public String demonstrarHabilidade() {
+        return "Eu sei codar";
+    }
 }
