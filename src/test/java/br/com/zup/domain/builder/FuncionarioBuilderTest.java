@@ -1,6 +1,9 @@
 package br.com.zup.domain.builder;
 
-import br.com.zup.domain.*;
+import br.com.zup.domain.Beneficio;
+import br.com.zup.domain.Endereco;
+import br.com.zup.domain.Funcionario;
+import br.com.zup.domain.Unidade;
 import br.com.zup.domain.enums.Cidade;
 import br.com.zup.domain.enums.Estado;
 import br.com.zup.domain.enums.LinguagemDeProgramacao;
@@ -29,9 +32,9 @@ public class FuncionarioBuilderTest {
                 .endereco("Rua amor, número 2200, Bairro Felicidade, Complemento Sucesso", Cidade.UBERLANDIA, Estado.MINAS_GERAIS, "38405983").build();
         unidade = new UnidadeBuilder().unidade("Uberlândia", enderecoUnidade).build();
         List<Beneficio> beneficios = new BeneficioBuilder().buildBeneficios(unidade.getEndereco().getEstado());
-        System.out.println(beneficios);
-        funcionario = new Developer(NomeSobrenomeUtils.geraNome(), NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
-                DataUtils.geraDataAdmissao(), enderecoFuncionario, unidade, beneficios, LinguagemDeProgramacao.JAVA);
+
+        funcionario = new FuncionarioBuilder().developer(NomeSobrenomeUtils.geraNome(),NomeSobrenomeUtils.geraSobrenome(), DataUtils.geraDataNascimento(),
+                DataUtils.geraDataAdmissao(), enderecoFuncionario, unidade, beneficios,LinguagemDeProgramacao.JAVA).build();
 
     }
 
@@ -55,4 +58,3 @@ public class FuncionarioBuilderTest {
 
     }
 }
-

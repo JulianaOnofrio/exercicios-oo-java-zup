@@ -22,4 +22,3 @@ public class CepUtils {
 }
 
 
-//tem uma função, que recebe uma lista

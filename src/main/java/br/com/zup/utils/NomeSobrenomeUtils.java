@@ -16,14 +16,14 @@ public class NomeSobrenomeUtils {
     public static String geraNome() {
         int indice = new Random().nextInt(nomes.size());
         String nome = nomes.get(indice);
-        nomes.remove(nome);
+        //nomes.remove(nome);
         return nome;
     }
 
     public static String geraSobrenome() {
         int indice = new Random().nextInt(sobrenomes.size());
         String sobrenome = sobrenomes.get(indice);
-        sobrenomes.remove(sobrenome);
+        //sobrenomes.remove(sobrenome);
         return sobrenome;
     }
 }

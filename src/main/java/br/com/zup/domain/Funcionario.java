@@ -82,7 +82,8 @@ public abstract class Funcionario implements Habilidade {
                 "dataNascimento=" + dataNascimento + ",\n" +
                 "dataAdmissao=" + dataAdmissao + ",\n" +
                 "endereco=" + endereco  + ",\n" +
-                "habilidade=" + demonstrarHabilidade() +
+                "habilidade=" + demonstrarHabilidade() + ",\n" +
+                "beneficios=" + beneficios +
                 "}\n";
 
     }
