@@ -12,7 +12,8 @@ public class Inicializador {
         System.out.println(EmpresaBuilder.getInstance());
         System.out.println(EmpresaBuilder.getInstance());
 
-
+        //  TODO pesquisar sobre SOLID
+        //  TODO verificar a estrutura de pastas, todas estão dentro de domain.
     }
 }
 

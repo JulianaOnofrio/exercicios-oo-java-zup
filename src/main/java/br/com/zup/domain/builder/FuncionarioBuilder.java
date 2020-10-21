@@ -13,6 +13,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+//  TODO dê uma olhada neste link: https://cursos.alura.com.br/course/design-patterns/task/278
+//  Talvez a construção deste builder possa ser simplificada.
 public class FuncionarioBuilder {
 
     private Funcionario funcionario;;
@@ -38,6 +40,7 @@ public class FuncionarioBuilder {
         return this.funcionario;
     }
 
+    //  TODO verificar se este método pode ser dividido em outros menores:
     public List<Funcionario> buildFuncionarios(Empresa empresa) {
 
         List<Unidade> unidades = empresa.getUnidades();

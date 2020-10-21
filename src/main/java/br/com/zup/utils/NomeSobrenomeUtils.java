@@ -10,6 +10,8 @@ public class NomeSobrenomeUtils {
     private static List<String> nomes = new ArrayList<String>(Arrays.asList("João", "Maurício", "Francisco", "Caio", "Roberto", "Vitor"));
     private static List<String> sobrenomes = new ArrayList<String>(Arrays.asList("Alves", "Oliveira", "Guedes", "Marcos", "Onofrio", "Salles"));
 
+    //  TODO a declaração do construtor padrão é dispensada nesses casos, ele já é gerado por default:
+    //  https://www.devmedia.com.br/construtores-em-java-primeiros-passos/28618
     public NomeSobrenomeUtils() {
     }
 
