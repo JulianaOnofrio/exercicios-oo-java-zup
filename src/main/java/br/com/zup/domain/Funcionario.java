@@ -1,5 +1,5 @@
 package br.com.zup.domain;
-import br.com.zup.domain.service.Habilidade;
+import br.com.zup.service.Habilidade;
 
 import java.time.LocalDate;
 import java.util.List;

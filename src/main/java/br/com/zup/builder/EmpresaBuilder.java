@@ -1,6 +1,8 @@
-package br.com.zup.domain.builder;
+package br.com.zup.builder;
 
 import br.com.zup.domain.Empresa;
+import br.com.zup.utils.FuncionarioUtils;
+import br.com.zup.utils.UnidadeUtils;
 
 import java.time.LocalDate;
 
@@ -12,7 +14,7 @@ public class EmpresaBuilder {
         return uniqueInstance;
     }
 
-    public EmpresaBuilder() {
+    private EmpresaBuilder() {
 
     }
 
@@ -20,8 +22,8 @@ public class EmpresaBuilder {
         Empresa empresa = new Empresa();
         empresa.setNomeFantasia("ZUP INNOVATION");
         empresa.setDataAbertura(LocalDate.of(2000, 10, 10));
-        empresa.setUnidades(new UnidadeBuilder().buildUnidades());
-        empresa.setFuncionarios(new FuncionarioBuilder().buildFuncionarios(empresa));
+        empresa.setUnidades(UnidadeUtils.gerarUnidades(6));
+        empresa.setFuncionarios(FuncionarioUtils.gerarFuncionarios(empresa.getUnidades(),3));
         return empresa;
     }
 }

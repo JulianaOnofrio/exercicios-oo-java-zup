@@ -1,7 +1,7 @@
 package br.com.zup;
 
 import br.com.zup.domain.Empresa;
-import br.com.zup.domain.builder.EmpresaBuilder;
+import br.com.zup.builder.EmpresaBuilder;
 
 public class Inicializador {
 
@@ -15,6 +15,5 @@ public class Inicializador {
 
     }
 }
-
 
 

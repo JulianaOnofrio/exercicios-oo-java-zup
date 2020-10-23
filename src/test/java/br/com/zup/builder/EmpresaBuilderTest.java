@@ -1,4 +1,4 @@
-package br.com.zup.domain.builder;
+package br.com.zup.builder;
 
 import br.com.zup.domain.Empresa;
 import org.junit.jupiter.api.DisplayName;
